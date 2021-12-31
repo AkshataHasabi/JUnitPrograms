@@ -8,6 +8,7 @@ public class JUnitProgram {
 		System.out.println("welcome to JUnit programms");
 		JUnitProgram obj=new JUnitProgram();
 		obj.temeratureConversion();
+		obj.monthlyPayment();
 	}
 	
 	public void temeratureConversion() {
@@ -30,5 +31,18 @@ public class JUnitProgram {
 		default:
 			System.out.println("Enter valid choice");
 		}
+	}
+	
+	public void monthlyPayment() {
+		System.out.print("Enter a Principal Amount:");
+		double principalAmount=sc.nextDouble();
+		System.out.print("Enter a Rate Of Interest:");
+		double rateOfInterest=sc.nextDouble();
+		rateOfInterest=(rateOfInterest/100)/12;
+		System.out.print("Enter a time period in years:");
+		double timePeriod=sc.nextInt();
+		timePeriod=timePeriod*12;
+		double totalAmount=(principalAmount*rateOfInterest)/(1-Math.pow(1+rateOfInterest, -timePeriod));
+		System.out.println("totalpayment:"+totalAmount);
 	}
 }
