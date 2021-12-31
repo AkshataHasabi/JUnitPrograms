@@ -3,12 +3,14 @@ import java.util.Scanner;
 
 public class JUnitProgram {
 	Scanner sc=new Scanner(System.in);
+	public static int Number;
 
 	public static void main(String[] args) {
 		System.out.println("welcome to JUnit programms");
 		JUnitProgram obj=new JUnitProgram();
 		obj.temeratureConversion();
 		obj.monthlyPayment();
+		obj.decimalToBinary();
 	}
 	
 	public void temeratureConversion() {
@@ -44,5 +46,20 @@ public class JUnitProgram {
 		timePeriod=timePeriod*12;
 		double totalAmount=(principalAmount*rateOfInterest)/(1-Math.pow(1+rateOfInterest, -timePeriod));
 		System.out.println("totalpayment:"+totalAmount);
+	}
+	
+	public void decimalToBinary() {
+		int remainderNumber[]=new int[1000];
+		int i=0;
+		System.out.print("Enter a number:");
+		Number=sc.nextInt();
+		while(Number>0) {
+		 remainderNumber[i]=Number%2;
+			Number=Number/2;
+			i++;
+		}
+		for(int j=i-1; j>=0; j--) {
+		System.out.println("Binary number is:"+ remainderNumber[j]);
+	}
 	}
 }
