@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class JUnitProgram {
 	Scanner sc=new Scanner(System.in);
+	private char[] dayName;
 	public static int Number;
 
 	public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class JUnitProgram {
 		obj.decimalToBinary();
 		squareRoot();
 		obj.swapNibbles();
+		obj.vendingMachine();
 	}
 	
 	public void temeratureConversion() {
@@ -82,5 +84,25 @@ public class JUnitProgram {
 		Number=sc.nextInt();
 		int output=((Number& 0x0F)<<4 | (Number& 0xF0)>>4);
 		System.out.println("After swaping:"+output);
+	}
+	
+	public void vendingMachine() {
+		int total=0;
+		int [] arrayNotes= { 2000, 1000, 500, 100, 50, 10, 5, 2, 1};
+		System.out.print("Enter Amount::");
+		int money=sc.nextInt();
+		if(money>0) {
+			for(int i=0; i<arrayNotes.length; i++) {
+				if(money>=arrayNotes[i]) {
+					int calculateNotes=money/arrayNotes[i];
+					total+=calculateNotes;
+					System.out.println(arrayNotes[i]+"Notes ..."+total);
+					money=money%arrayNotes[i];
+				}
+			}
+			System.out.println("Minimum number of notes"+total);
+		}else {
+		System.out.println("change negative");
+	}
 	}
 }
