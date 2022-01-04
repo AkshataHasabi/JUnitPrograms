@@ -9,8 +9,9 @@ public class JUnitProgram {
 		System.out.println("welcome to JUnit programms");
 		JUnitProgram obj=new JUnitProgram();
 		obj.temeratureConversion();
-		obj.monthlyPayment();
+	   	obj.monthlyPayment();
 		obj.decimalToBinary();
+		squareRoot();
 	}
 	
 	public void temeratureConversion() {
@@ -61,5 +62,17 @@ public class JUnitProgram {
 		for(int j=i-1; j>=0; j--) {
 		System.out.println("Binary number is:"+ remainderNumber[j]);
 	}
+ }
+	
+	public static void squareRoot() {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter a number to find square root value:");
+		double number=sc.nextDouble();
+		double epsilon=1e-15;
+		double rootNum=number;
+		while(Math.abs(rootNum-number/rootNum)>epsilon*rootNum) {
+			rootNum=(number/rootNum +rootNum)/2;
+		}
+		System.out.println("square root of a number is:"+rootNum);
 	}
 }
