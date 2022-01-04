@@ -12,6 +12,7 @@ public class JUnitProgram {
 	   	obj.monthlyPayment();
 		obj.decimalToBinary();
 		squareRoot();
+		obj.swapNibbles();
 	}
 	
 	public void temeratureConversion() {
@@ -74,5 +75,12 @@ public class JUnitProgram {
 			rootNum=(number/rootNum +rootNum)/2;
 		}
 		System.out.println("square root of a number is:"+rootNum);
+	}
+	
+	public void swapNibbles() {
+		System.out.println("Enter a number:");
+		Number=sc.nextInt();
+		int output=((Number& 0x0F)<<4 | (Number& 0xF0)>>4);
+		System.out.println("After swaping:"+output);
 	}
 }
